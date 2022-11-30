@@ -91,6 +91,7 @@ public class Gestor {
             case 1:
                 CSV csv = new CSV();
                 csv.readCSV();
+                comprobarAviones();
                 break;
 
             case 2:
