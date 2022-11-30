@@ -2,6 +2,7 @@ import Aviones.Aviones;
 import Aviones.AvionB;
 import Aviones.AvionA;
 
+
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -88,7 +89,8 @@ public class Gestor {
         switch (choice) {
 
             case 1:
-                comprobarAviones();
+                CSV csv = new CSV();
+                csv.readCSV();
                 break;
 
             case 2:
