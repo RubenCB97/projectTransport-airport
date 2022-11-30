@@ -1,13 +1,16 @@
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import com.opencsv.*;
-public class csvCreator {
+public class CSV {
 
-    public void aaa {
+    public void readCSV {
         try {
             CSVReader lector = new CSVReader(new FileReader("hola.csv"));
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
+    }
+    public void csvWriter() {
+
     }
 }
