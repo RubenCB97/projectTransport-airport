@@ -7,22 +7,16 @@ public class Pedidos {
 
     private Integer weight;
     private Integer size;
-    private String trackingCode;
     private Boolean fragile;
-    private Date shippingDate;
     private String state;
-    private String origin;
     private String destination;
 
-    public Pedidos(String id, int weight, int size, String trackingCode, Boolean fragile, Date shippingDate, String state, String orig, String dest) {
+    public Pedidos(String id, int weight, int size , Boolean fragile, String state, String dest) {
         this.id = id;
         this.weight = weight;
         this.size = size;
-        this.trackingCode = trackingCode;
         this.fragile = fragile;
-        this.shippingDate = shippingDate;
         this.state = state;
-        this.origin = orig;
         this.destination = dest;
     }
 
@@ -43,13 +37,7 @@ public class Pedidos {
         this.weight = weight;
     }
 
-    public String getTrackingCode() {
-        return trackingCode;
-    }
 
-    public void setTrackingCode(String trackingCode) {
-        this.trackingCode = trackingCode;
-    }
 
     public Boolean getFragile() {
         return fragile;
@@ -59,13 +47,7 @@ public class Pedidos {
         this.fragile = fragile;
     }
 
-    public Date getShippingDate() {
-        return shippingDate;
-    }
 
-    public void setShippingDate(Date shippingDate) {
-        this.shippingDate = shippingDate;
-    }
 
     public String getState() {
         return state;
@@ -82,13 +64,7 @@ public class Pedidos {
     public void setSize(int size) {
         this.size = size;
     }
-    public String getOrigin() {
-        return origin;
-    }
 
-    public void setOrigin(String origin) {
-        this.origin = origin;
-    }
 
     public String getDestination() {
         return destination;
