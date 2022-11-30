@@ -123,7 +123,7 @@ public class Gestor {
 
 
                 System.out.println("Bienvenido al menu del aeropuerto");
-                System.out.println("Push realizado");
+                System.out.println("Push realizado2");
                 System.out.println("Eliga una opcion:");
 
                 System.out.println("1- Gestion Avion");
