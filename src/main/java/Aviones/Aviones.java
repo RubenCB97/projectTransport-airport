@@ -1,6 +1,6 @@
 package Aviones;
 
-public class Aviones  {
+public abstract class Aviones  {
     private String modelo;
     private Integer deposito;
     private Integer capacidadPasajeros;
@@ -8,7 +8,9 @@ public class Aviones  {
     private Integer motores;
     private Tamano tamanoPaquete;
 
+    private Integer id;
 
+    private static Integer idKey=0;
 
     public Integer getMotores() {
         return motores;
@@ -25,7 +27,8 @@ public class Aviones  {
         this.capacidadBodega=0;
         this.capacidadPasajeros=0;
         this.tamanoPaquete = Tamano.INPACKABLE;
-
+        this.id=idKey;
+        this.idKey++;
     }
 
     public Tamano getTamanoPaquete() {
@@ -68,5 +71,11 @@ public class Aviones  {
         this.capacidadBodega = capacidadBodega;
     }
 
+    public void setId(Integer id){
+        this.id = id;
+    }
 
+    public Integer getId(){
+        return this.id;
+    }
 }
