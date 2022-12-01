@@ -42,7 +42,8 @@ public class CSV {
         try {
             ArrayList<String[]> listuax = new ArrayList<>();
 
-            CSVWriter writer = new CSVWriter(new FileWriter(fileCSV,true));
+
+            CSVWriter writer = new CSVWriter(new FileWriter(fileCSV,false));
 
             writer.writeAll(list);
             writer.close();

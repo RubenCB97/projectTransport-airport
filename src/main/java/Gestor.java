@@ -12,10 +12,14 @@ public class Gestor {
 
     private ArrayList <Aviones> aviones;
 
+    private CSV csv;
+
     public Gestor(){
+        csv = new CSV();
         aviones = new ArrayList<Aviones>();
 
     }
+    //-----------AVIONES---------------//
     public void addAviones(Aviones avion){
         this.aviones.add(avion);
 
@@ -55,13 +59,12 @@ public class Gestor {
         switch (choice){
             case 1:
                 System.out.println("----AvionA----");
-                System.out.println("¿Origen?");
-                origin = input.next();
                 System.out.println("¿Destino?");
                 destination = input.next();
                 Aviones avionA = new AvionA("Boeing 747");
                 //Añadir rutas al avión y configurar el avión
-                aviones.add(avionA);
+                this.aviones.add(avionA);
+                //añadir al excel
                 break;
             case 2:
                 System.out.println("----AvionB----");
@@ -71,9 +74,26 @@ public class Gestor {
                 destination = input.next();
                 Aviones avionB = new AvionB("MD-80");
                 //Añadir rutas al avión y configurar el avión
-                aviones.add(avionB);
+                this.aviones.add(avionB);
+                //añadir al excel
                 break;
         }
+
+    }
+    public void modAvion(){
+
+    }
+    public void removeAvion(){
+        comprobarAviones();
+        System.out.println("Introduce el modelo del avion que desea eliminar: ");
+        String choice = input.next();
+
+        this.aviones.forEach( avion -> {
+            if(avion.getModelo().contains(choice)){
+                this.aviones.remove(avion);
+                //eliminar del excel
+            }
+        });
 
     }
     public void gestionAvion(){
@@ -90,10 +110,9 @@ public class Gestor {
         switch (choice) {
 
             case 1:
-                CSV csv = new CSV();
+                /*CSV csv = new CSV();
                 ArrayList<String[]> list = csv.readCSV();
-
-                csv.csvWriter(list);
+                csv.csvWriter(list);*/
                 comprobarAviones();
                 break;
 
@@ -106,22 +125,49 @@ public class Gestor {
                 break;
 
             case 4:
+                modAvion();
                 break;
 
             case 5:
+                removeAvion();
                 break;
         }
 
     }
-    public void comprobarPasajero(){
+    //----------PAQUETES----------------//
+    public void comprobarPaquetes(){
+
+        System.out.println("Informacion de todos los paquetes");
+        System.out.println("---------------------------------");
+
+        ArrayList<String[]> list = this.csv.readCSV();
+
+        list.forEach(x -> System.out.println(Arrays.toString(x).replace(","," |")));
+
 
     }
-    public void modificarAvion(){
+   public void gestorPaquetes() {
+       System.out.println("1 - Ver información de todos los paquetes");
+       System.out.println("2 - Buscar un paquete");
+       System.out.println("3 - Anadir un paquete a un avion");
+       System.out.println("4 - Eliminar un paquete de un avion");
 
-    }
-    public void modifcarPasajero(){
+       int choice = input.nextInt();
 
-    }
+
+       switch (choice) {
+
+           case 1:
+               comprobarPaquetes();
+               break;
+           case 2:
+               break;
+           case 3:
+               break;
+           case 4:
+               break;
+       }
+   }
     public void mainMenu() {
         boolean fin = false;
         while(!fin) {
@@ -146,12 +192,13 @@ public class Gestor {
                 switch (choice) {
 
                     case 1:
-                        System.out.println("Viendo Aviones");
+                        System.out.println("Gestion de aviones");
                         gestionAvion();
                         fin = true;
                         break;
                     case 2:
-                        System.out.println("Viendo Pasajeros");
+                        System.out.println("Gestion de pedidos");
+                        gestorPaquetes();
                         fin = true;
                         break;
 
