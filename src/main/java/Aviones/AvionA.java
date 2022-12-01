@@ -8,5 +8,6 @@ public class AvionA extends Aviones{
         super.setCapacidadPasajeros(200);
         super.setCapacidadBodega(300);
         super.setMotores(4);
+        super.setTamanoPaquete(Tamano.MEDIUM);
     }
 }

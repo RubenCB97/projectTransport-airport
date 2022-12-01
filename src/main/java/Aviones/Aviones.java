@@ -5,8 +5,10 @@ public class Aviones  {
     private Integer deposito;
     private Integer capacidadPasajeros;
     private Integer capacidadBodega;
-
     private Integer motores;
+    private Tamano tamanoPaquete;
+
+
 
     public Integer getMotores() {
         return motores;
@@ -22,7 +24,18 @@ public class Aviones  {
         this.deposito=0;
         this.capacidadBodega=0;
         this.capacidadPasajeros=0;
+        this.tamanoPaquete = Tamano.INPACKABLE;
+
     }
+
+    public Tamano getTamanoPaquete() {
+        return tamanoPaquete;
+    }
+
+    public void setTamanoPaquete(Tamano tamanoPaquete) {
+        this.tamanoPaquete = tamanoPaquete;
+    }
+
     public String getModelo() {
         return modelo;
     }
