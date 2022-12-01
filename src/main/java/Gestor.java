@@ -127,8 +127,7 @@ public class Gestor {
 
                 System.out.println("Bienvenido al menu del aeropuerto");
 //***************************COMENTARIOS DE PRUEBAS GIT ************************
-                System.out.println("Push realizado");
-                System.out.println("Push realizado2");
+                System.out.println("Push y pull con intellij");
 //***************************COMENTARIOS DE PRUEBAS GIT ************************                
                 System.out.println("Eliga una opcion:");
 
