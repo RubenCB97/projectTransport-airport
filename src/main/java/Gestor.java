@@ -4,6 +4,7 @@ import Aviones.AvionA;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -90,7 +91,9 @@ public class Gestor {
 
             case 1:
                 CSV csv = new CSV();
-                csv.readCSV();
+                ArrayList<String[]> list = csv.readCSV();
+
+                csv.csvWriter(list);
                 comprobarAviones();
                 break;
 

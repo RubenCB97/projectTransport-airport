@@ -1,5 +1,8 @@
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -9,16 +12,17 @@ public class CSV {
     public static final char SEPARATOR=';';
     public static final char QUOTE='"';
 
-    public List<String> test;
-    public List<String> readCSV (){
+    public ArrayList<String[]> test;
+    public ArrayList<String[]> readCSV (){
         CSVReader reader = null;
         test = new ArrayList<>();
         try {
             reader = new CSVReader(new FileReader("Data/FicheroAeropuerto.csv"),SEPARATOR,QUOTE);
             String[] nextLine=null;
-
             while ((nextLine = reader.readNext()) != null) {
-                test.add(Arrays.toString(nextLine));
+
+                test.add(nextLine);
+
             }
 
             if (null != reader) {
@@ -26,14 +30,28 @@ public class CSV {
             }
 
         } catch (Exception e) {
-            System.out.println("Error");
+            System.out.println("Error lectura fichero CSV");
         }
 
-        System.out.println(test);
         return test;
 
     }
-    public void csvWriter() {
+    public void csvWriter(ArrayList<String[]> list) {
+        String fileCSV = "Data/FicheroAeropuertoExit.csv";
+
+        try {
+            ArrayList<String[]> listuax = new ArrayList<>();
+
+            CSVWriter writer = new CSVWriter(new FileWriter(fileCSV,true));
+
+            writer.writeAll(list);
+            writer.close();
+
+
+        } catch (IOException e) {
+            System.out.println("Error escritura fichero CSV");
+        }
+
 
     }
 }
