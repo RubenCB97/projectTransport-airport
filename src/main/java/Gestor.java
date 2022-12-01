@@ -183,7 +183,7 @@ public class Gestor {
 
                 System.out.println("1- Gestion Avion");
                 System.out.println("2- Gestion Pedidos");
-
+                System.out.println("3- Fin");
 
 
                 int choice = input.nextInt();
@@ -194,14 +194,15 @@ public class Gestor {
                     case 1:
                         System.out.println("Gestion de aviones");
                         gestionAvion();
-                        fin = true;
                         break;
                     case 2:
                         System.out.println("Gestion de pedidos");
                         gestorPaquetes();
+                        break;
+                    case 3:
+                        System.out.println("Hasta luego!");
                         fin = true;
                         break;
-
 
                     default:
                         System.out.println("Introduzca un numero valido");
