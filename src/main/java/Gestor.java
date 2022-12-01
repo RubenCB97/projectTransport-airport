@@ -129,7 +129,10 @@ public class Gestor {
 
 
                 System.out.println("Bienvenido al menu del aeropuerto");
-                System.out.println("Push realizado");
+//***************************COMENTARIOS DE PRUEBAS GIT ************************
+                System.out.println("Push y pull con intellij");
+                System.out.println("¿añadido jdk?");
+//***************************COMENTARIOS DE PRUEBAS GIT ************************                
                 System.out.println("Eliga una opcion:");
 
                 System.out.println("1- Gestion Avion");
