@@ -1,9 +1,13 @@
 
+import com.sun.jdi.IntegerType;
+
 import java.util.Date;
 
 public class Pedidos {
 
-    private String id;
+    private Integer id;
+
+    private static Integer idKey=0;
 
     private Integer weight;
     private Integer size;
@@ -11,8 +15,9 @@ public class Pedidos {
     private String state;
     private String destination;
 
-    public Pedidos(String id, int weight, int size , Boolean fragile, String state, String dest) {
-        this.id = id;
+    public Pedidos(int weight, int size , Boolean fragile, String state, String dest) {
+        this.id = idKey;
+        this.idKey++;
         this.weight = weight;
         this.size = size;
         this.fragile = fragile;
@@ -21,11 +26,11 @@ public class Pedidos {
     }
 
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
